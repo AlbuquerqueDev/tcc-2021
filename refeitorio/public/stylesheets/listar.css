@@ -1,0 +1,18 @@
+body{
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+
+  .container{
+    position: relative;
+    top: 100px;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+
+  .listagem_aluno a {
+      text-decoration: none;
+  }

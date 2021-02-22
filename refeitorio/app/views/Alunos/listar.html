@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href='../../../public/stylesheets/listar.css'>
+
+    <title>Agendamento de Refeição</title>
+</head>
+<body>
+    <div class="container">
+        <div class="detalhes_aluno">
+            <div class="listagem_aluno">
+                #{list items:alunos, as: 'aluno'}
+                
+                ${"Matrícula: " + aluno.matricula + " | "}
+                ${"Cargo: " + aluno.tipoAluno}
+                ${"| Tipo de refeição: " + aluno.tipoRefeicao + " | "}
+                
+                <a href="@{Alunos.deletar(aluno.id)}">Cancelar agendamento</a><br>
+                #{/list}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

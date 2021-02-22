@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href='../../../public/stylesheets/login.css'>
+</head>
+<body>
+    <div class="center">
+        <h1>Login</h1>
+        <form action="@{Login.autenticar}" method="post">
+            <div class="txt_field">
+                <input type="text" name="matricula" required>
+                <span></span>
+                <label>Matrícula</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="senha" required>
+                <span></span>
+                <label>Senha</label>
+            </div>
+            <input type="submit" value="Entrar">
+            <div class="signup_link">
+                Não é cadastrado? <a href="@{Alunos.agendamentoRefeicao}">Criar Cadastro</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de refeição</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href='../../../public/stylesheets/agendamentoRefeicao.css'>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Formulário de Refeição</div>
+        <div class="content">
+          <form action="@{Alunos.salvarAlunos(aluno)}" method="POST">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Matrícula</span>
+                <input  name="aluno.id" type="hidden" value="${editarAluno?.id}" required>  
+            <input  name="aluno.matricula" type="text" placeholder="Digite sua matrícula"
+                    value="${editarAluno?.matricula}" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Senha</span>
+                <input name="aluno.senha" type="password" placeholder="Digite sua senha" required>
+              </div>
+              <div class="select-box">
+                <span class="details">Cargo</span>
+                <select class="cargo" name="aluno.id" style="display:none"></select>
+                <select class="cargo" name="aluno.tipoAluno" required>
+                    <option class="cargo_placeholder" value="" disabled selected>Escolha seu cargo</option>
+                    <option name="regular" value="Regular">Regular</option>
+                    <option name="bolsista" value="Bolsista">Bolsista</option>
+                    <option name="dependente" value="Dependente">Dependente</option>
+                    <option name="outros" value="outros">Outros</option>
+                </select>
+              </div>
+              <div class="select-box">
+                <span class="details">Refeição</span>
+                <select class="refeicao" name="aluno.id" style="display:none"></select>
+                <select class="refeicao" name="aluno.tipoRefeicao" required>
+                    <option class="refeicao_placeholder" value="Escolha a refeição" disabled selected>Escolha a refeição</option>
+                    <option name="almoco" value="Almoço">Almoço</option>
+                    <option name="jantar" value="Jantar">Jantar</option>
+                </select>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Enviar">
+            </div>
+          </form>
+        </div>
+      </div>
+</body>
+</html>
